@@ -2,7 +2,7 @@ backend:
   name: github
   repo: F1roz/drshaiful
   branch: main
-  base_url: https://drshaiful.vercel.app
+  base_url: https://drshaifulislam.vercel.app/
   auth_endpoint: api/auth
 
 media_folder: "assets/img"
