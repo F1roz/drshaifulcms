@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: "About Dr. Shaiful Islam"
+description: "Learn about Dr. Shaiful Islam's professional background, philosophy of care, and academic role at Bangladesh Medical University."
+permalink: "about.html"
+---
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">About</div>
+    <h1 class="reveal in">About Dr. Shaiful Islam</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container about-grid">
+    <div class="about-portrait reveal">
+      <div class="portrait-card"><img src="{{ about.profile_image }}" alt="Dr. Shaiful Islam portrait"></div>
+      <div class="portrait-badge"><div class="num">15+</div><div class="lbl">Years of Excellence</div></div>
+    </div>
+    <div class="about-body reveal reveal-delay-1">
+      <div class="eyebrow">Professional Summary</div>
+      <h2>{{ about.heading }}</h2>
+      {% for p in about.paragraphs %}<p>{{ p }}</p>{% endfor %}
+      <div class="about-quote">"{{ about.quote }}"</div>
+      <div class="pill-row">
+        {% for pill in about.specialty_pills %}<span class="pill">{{ pill }}</span>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">Academic Journey</div>
+      <h2>Qualifications &amp; Career</h2>
+    </div>
+    <div class="about-grid" style="align-items:start;">
+      <div class="reveal">
+        <h3 style="font-size:1.3rem;margin-bottom:26px;">Qualifications</h3>
+        <div class="timeline">
+          {% for q in qualifications.qualifications %}
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">{{ q.period }}</div>
+            <h4>{{ q.title }}</h4>
+            <p>{{ q.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <h3 style="font-size:1.3rem;margin-bottom:26px;">Career History</h3>
+        <div class="timeline">
+          {% for c in career.career %}
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">{{ c.period }}</div>
+            <h4>{{ c.title }}</h4>
+            <p>{{ c.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

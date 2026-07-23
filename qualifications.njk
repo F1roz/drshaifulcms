@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: "Qualifications"
+description: "Academic qualifications and certifications of Dr. Shaiful Islam, Paediatric Surgeon."
+permalink: "qualifications.html"
+---
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">Academic Journey</div>
+    <h1 class="reveal in">Qualifications &amp; Certifications</h1>
+  </div>
+</section>
+<section>
+  <div class="container" style="max-width:820px;">
+    <div class="timeline">
+      {% for q in qualifications.qualifications %}
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">{{ q.period }}</div>
+        <h4>{{ q.title }}</h4>
+        <p>{{ q.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+---
+layout: base.njk
+title: "Clinical Expertise & Procedures"
+description: "Explore Dr. Shaiful Islam's full range of paediatric surgical procedures, organised by specialty."
+permalink: "procedures/index.html"
+categories:
+  - id: general
+    name: General Paediatric Surgery
+    desc: Everyday paediatric surgical conditions seen in clinic — from hernias to minor skin and soft-tissue lumps.
+  - id: neonatal
+    name: Neonatal Surgery
+    desc: Specialist surgical care for structural conditions identified in newborn babies.
+  - id: mas
+    name: Minimal Access Surgery
+    desc: Keyhole surgical techniques used across a wide range of paediatric conditions.
+  - id: urology
+    name: Paediatric Urology
+    desc: Surgical care for the kidneys, bladder, and genitalia in infants and children.
+  - id: hepatobiliary
+    name: Paediatric Hepatobiliary Surgery
+    desc: Surgical management of liver, bile duct, and gallbladder conditions in children.
+  - id: oncology
+    name: Paediatric Surgical Oncology
+    desc: Multidisciplinary surgical care for solid tumours of childhood.
+---
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">Clinical Expertise</div>
+    <h1 class="reveal in">Procedures &amp; Specialties</h1>
+    <p class="hero-role" style="max-width:700px;">A comprehensive overview of the paediatric surgical conditions and procedures Dr. Shaiful Islam treats.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    {% for cat in categories %}
+    <div class="cat-block" id="{{ cat.id }}">
+      <div class="cat-head"><h2>{{ cat.name }}</h2><span>{{ cat.desc }}</span></div>
+      <div class="proc-grid">
+        {% for p in collections.procedures %}
+          {% if p.data.catid == cat.id %}
+          <a href="/procedures/{{ p.fileSlug }}.html" class="proc-tile reveal">
+            <h4>{{ p.data.title }}</h4>
+            <p>{{ p.data.summary }}</p>
+            <span class="go">Read more &rarr;</span>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

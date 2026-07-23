@@ -1,0 +1,28 @@
+---
+layout: base.njk
+title: "Video Gallery"
+description: "Videos featuring Dr. Shaiful Islam — lectures, interviews, and patient education content."
+permalink: "videos.html"
+---
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">Media</div>
+    <h1 class="reveal in">Video Gallery</h1>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="video-grid">
+      {% for v in videos.videos %}
+      <div class="v-card reveal">
+        {% if v.video_url %}
+        <a href="{{ v.video_url }}" target="_blank" rel="noopener" class="v-thumb" style="text-decoration:none;"><div class="v-play">&#9658;</div></a>
+        {% else %}
+        <div class="v-thumb"><div class="v-play">&#9658;</div></div>
+        {% endif %}
+        <div class="v-body"><h4>{{ v.title }}</h4><p>{{ v.category }}</p></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

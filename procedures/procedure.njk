@@ -1,0 +1,55 @@
+---
+pagination:
+  data: collections.procedures
+  size: 1
+  alias: proc
+permalink: "procedures/{{ proc.fileSlug }}.html"
+layout: base.njk
+eleventyComputed:
+  title: "{{ proc.data.title }}"
+  description: "{{ proc.data.summary }}"
+---
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">{{ proc.data.category }}</div>
+    <h1 class="reveal in">{{ proc.data.title }}</h1>
+    <p class="crumbs"><a href="/index.html">Home</a> &rsaquo; <a href="/procedures/index.html">Expertise</a> &rsaquo; {{ proc.data.title }}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container proc-body">
+    <div class="proc-content">
+      <img src="{{ proc.data.image }}" alt="{{ proc.data.title }}" style="border-radius:18px;margin-bottom:36px;width:100%;aspect-ratio:16/8;object-fit:cover;background:var(--bg-alt);">
+      <h2>Overview</h2>
+      <p>{{ proc.data.overview }}</p>
+      <h2>The Procedure</h2>
+      <p>{{ proc.data.procedure_text }}</p>
+      <h2>Preparing for Surgery</h2>
+      <p>{{ proc.data.prep }}</p>
+      <h2>Recovery</h2>
+      <p>{{ proc.data.recovery }}</p>
+      <h2>Possible Complications</h2>
+      <p>{{ proc.data.complications }}</p>
+      <h2>Follow-up</h2>
+      <p>{{ proc.data.followup }}</p>
+    </div>
+    <aside class="proc-sidebar">
+      <div class="side-card">
+        <h4>Related Procedures</h4>
+        <div class="proc-related">
+        {% for other in collections.procedures %}
+          {% if other.data.catid == proc.data.catid and other.fileSlug != proc.fileSlug %}
+          <a href="/procedures/{{ other.fileSlug }}.html">{{ other.data.title }}</a>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      <div class="side-card">
+        <h4>Book a Consultation</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-bottom:16px;">Discuss {{ proc.data.title | lower }} with Dr. Shaiful Islam at one of his chambers.</p>
+        <a href="/appointment.html" class="btn btn-navy" style="width:100%;justify-content:center;">Book Appointment</a>
+      </div>
+    </aside>
+  </div>
+</section>

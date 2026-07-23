@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: "Professional Memberships"
+description: "Professional memberships and affiliations of Dr. Shaiful Islam."
+permalink: "memberships.html"
+---
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">Affiliations</div>
+    <h1 class="reveal in">Professional Memberships</h1>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="member-grid">
+      {% for m in memberships.memberships %}
+      <div class="member-card reveal">
+        <div class="member-mark">{{ m.name | first }}</div>
+        <p>{{ m.name }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+{
+  "testimonials": [
+    {
+      "quote": "Dr. Islam explained every step of our son's surgery with such patience. We felt reassured from the very first consultation.",
+      "name": "Parent of Patient",
+      "relation": "Hernia Repair",
+      "rating": 5
+    },
+    {
+      "quote": "The care our daughter received was compassionate and professional throughout. Recovery was smooth and well guided.",
+      "name": "Parent of Patient",
+      "relation": "Circumcision",
+      "rating": 5
+    },
+    {
+      "quote": "A truly skilled surgeon who takes the time to answer every question. We are grateful for his expertise.",
+      "name": "Parent of Patient",
+      "relation": "Neonatal Surgery",
+      "rating": 5
+    },
+    {
+      "quote": "From diagnosis to follow-up, the entire process was handled with great care and clear communication.",
+      "name": "Parent of Patient",
+      "relation": "Undescended Testis",
+      "rating": 5
+    },
+    {
+      "quote": "Excellent bedside manner and clearly highly skilled. Our son recovered quickly and without complication.",
+      "name": "Parent of Patient",
+      "relation": "Hydrocoele Repair",
+      "rating": 5
+    },
+    {
+      "quote": "We travelled from Khulna for the consultation and it was absolutely worth it. Highly recommended.",
+      "name": "Parent of Patient",
+      "relation": "General Consultation",
+      "rating": 5
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "qualifications": [
+    {
+      "period": "MBBS",
+      "title": "Bachelor of Medicine, Bachelor of Surgery",
+      "description": "Foundational medical degree, graduated with clinical distinction."
+    },
+    {
+      "period": "MS (Paediatric Surgery)",
+      "title": "Master of Surgery — Paediatric Surgery",
+      "description": "Advanced postgraduate surgical training specialising in the surgical care of infants, children, and adolescents."
+    },
+    {
+      "period": "FCPS (Paediatric Surgery)",
+      "title": "Fellow of the College of Physicians and Surgeons",
+      "description": "Fellowship examination recognising advanced clinical and surgical competency in paediatric surgery."
+    },
+    {
+      "period": "Fellowship, Neonatal & Minimal Access Surgery",
+      "title": "Advanced Subspecialty Fellowship",
+      "description": "Specialist fellowship training in neonatal surgical care and laparoscopic (minimal access) techniques."
+    },
+    {
+      "period": "Continuing Medical Education",
+      "title": "Workshops & Certifications",
+      "description": "Ongoing certified training in paediatric surgical oncology, hepatobiliary surgery, and paediatric urology through national and international workshops."
+    }
+  ]
+}

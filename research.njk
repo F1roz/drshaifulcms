@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: "Research & Publications"
+description: "Research interests and selected publications by Dr. Shaiful Islam, Paediatric Surgeon."
+permalink: "research.html"
+---
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">Academic Contributions</div>
+    <h1 class="reveal in">Research &amp; Publications</h1>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="research-list">
+      {% for r in research.research %}
+      <div class="research-item reveal">
+        <div class="research-year">{{ r.year }}</div>
+        <div><h4>{{ r.title }}</h4><p>{{ r.detail }}</p></div>
+        <span class="research-tag">{{ r.tag }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

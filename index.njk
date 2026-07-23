@@ -1,0 +1,102 @@
+---
+layout: base.njk
+title: "Home"
+description: "Dr. Shaiful Islam — Paediatric Surgeon and Assistant Professor at Bangladesh Medical University, Dhaka."
+permalink: "index.html"
+---
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">{{ home.hero_eyebrow }}</div>
+    <h1 class="reveal in">{{ home.hero_title }}</h1>
+    <p class="hero-role reveal in reveal-delay-1">{{ home.hero_subtitle | safe }}</p>
+    <div class="hero-btns reveal in reveal-delay-2">
+      <a href="/appointment.html" class="btn btn-gold">Book Appointment</a>
+      <a href="/about.html" class="btn btn-outline">View Profile</a>
+    </div>
+    <div class="hero-stats reveal in reveal-delay-3">
+      {% for s in home.stats %}
+      <div class="stat"><div class="stat-num" data-count="{{ s.number }}">0<span class="plus">+</span></div><div class="stat-label">{{ s.label }}</div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait reveal">
+        <div class="portrait-card"><img src="{{ home.profile_image }}" alt="Dr. Shaiful Islam"></div>
+        <div class="portrait-badge"><div class="num">15+</div><div class="lbl">Years of Excellence</div></div>
+      </div>
+      <div class="about-body reveal reveal-delay-1">
+        <div class="eyebrow">About Dr. Islam</div>
+        <h2>{{ home.about_heading }}</h2>
+        {% for p in home.about_paragraphs %}<p>{{ p }}</p>{% endfor %}
+        <div class="about-quote">"{{ home.about_quote }}"</div>
+        <a href="/about.html" class="btn btn-navy">Read Full Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="position-card reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:10px;">Present Position</div>
+        <h3>{{ home.position_title }}</h3>
+        <p>{{ home.position_subtitle }}</p>
+      </div>
+      <div class="badge-glow">Currently Practicing</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">Clinical Expertise</div>
+      <h2>Specialised Surgical Care Across Every Stage of Childhood</h2>
+    </div>
+    <div class="expertise-grid">
+      <div class="exp-card reveal"><div class="exp-icon">&#9877;</div><h3>General Paediatric Surgery</h3><p>Everyday paediatric surgical conditions — hernias, minor skin lumps and more.</p><a href="/procedures/index.html#general" class="more">Explore procedures &rarr;</a></div>
+      <div class="exp-card reveal"><div class="exp-icon">&#128118;</div><h3>Neonatal Surgery</h3><p>Specialist surgical care for newborns with structural conditions.</p><a href="/procedures/index.html#neonatal" class="more">Explore procedures &rarr;</a></div>
+      <div class="exp-card reveal"><div class="exp-icon">&#128300;</div><h3>Minimal Access Surgery</h3><p>Keyhole surgical techniques used across a wide range of conditions.</p><a href="/procedures/index.html#mas" class="more">Explore procedures &rarr;</a></div>
+      <div class="exp-card reveal"><div class="exp-icon">&#129446;</div><h3>Paediatric Urology</h3><p>Surgical care for the kidneys, bladder, and genitalia in children.</p><a href="/procedures/index.html#urology" class="more">Explore procedures &rarr;</a></div>
+      <div class="exp-card reveal"><div class="exp-icon">&#129437;</div><h3>Hepatobiliary Surgery</h3><p>Surgical management of liver, bile duct, and gallbladder conditions.</p><a href="/procedures/index.html#hepatobiliary" class="more">Explore procedures &rarr;</a></div>
+      <div class="exp-card reveal"><div class="exp-icon">&#10084;</div><h3>Paediatric Oncology</h3><p>Multidisciplinary surgical care for solid tumours of childhood.</p><a href="/procedures/index.html#oncology" class="more">Explore procedures &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">Patient Testimonials</div>
+      <h2>Trusted by Families Across Bangladesh</h2>
+    </div>
+    <div class="testi-track">
+      {% for t in testimonials.testimonials | slice(0,3) %}
+      <div class="testi-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">{{ t.quote }}</p>
+        <div class="testi-who"><div class="testi-avatar">{{ t.name | first }}</div><div><div class="name">{{ t.name }}</div><div class="rel">{{ t.relation }}</div></div></div>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center;margin-top:40px;"><a href="/testimonials.html" class="btn btn-navy">Read More Stories</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">Get in Touch</div>
+      <h2>Book a Consultation Today</h2>
+    </div>
+    <div style="text-align:center;">
+      <a href="/appointment.html" class="btn btn-gold">Book Appointment</a>
+      <a href="/chambers.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--navy);margin-left:16px;">View Chambers</a>
+    </div>
+  </div>
+</section>
