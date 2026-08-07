@@ -1,0 +1,55 @@
+---
+title: "Book Appointment"
+description: "Book an appointment with Dr. Shaiful Islam, Paediatric Surgeon, at any of his chambers."
+---
+
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">Appointment</div>
+    <h1 class="reveal in">Book an Appointment</h1>
+  </div>
+</section>
+<section>
+  <div class="container appt-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Before You Visit</div>
+      <h2>What to Expect</h2>
+      <div class="appt-steps">
+        <div class="appt-step"><div class="appt-num">1</div><div><h4>Arrive Early</h4><p>Please arrive 10–15 minutes before your scheduled time to complete registration.</p></div></div>
+        <div class="appt-step"><div class="appt-num">2</div><div><h4>Bring Documents</h4><p>Referral letter (if any), previous test results or imaging, and any relevant medical records.</p></div></div>
+        <div class="appt-step"><div class="appt-num">3</div><div><h4>Consultation</h4><p>A thorough clinical assessment and discussion of findings, with a clear treatment plan explained in simple terms.</p></div></div>
+        <div class="appt-step"><div class="appt-num">4</div><div><h4>Cancellations</h4><p>Please call during chamber hours with at least one day's notice if you need to reschedule.</p></div></div>
+      </div>
+    </div>
+    <div class="form-card reveal reveal-delay-1">
+      <form id="appointment-form">
+        <div class="form-row">
+          <div class="form-group"><label>Full Name</label><input type="text" required placeholder="Parent / Guardian name"></div>
+          <div class="form-group"><label>Child's Age</label><input type="text" placeholder="e.g. 3 years"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone Number</label><input type="tel" required placeholder="+880 1XXX-XXXXXX"></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="you@example.com"></div>
+        </div>
+        <div class="form-group">
+          <label>Preferred Chamber</label>
+          <select><option>Bangladesh Medical University (BMU)</option>
+<option>Dhanmondi Chamber, Dhaka</option>
+<option>Khulna Chamber</option>
+<option>Additional Weekend Chamber</option></select>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Preferred Date</label><input type="date"></div>
+          <div class="form-group"><label>Preferred Time</label><input type="time"></div>
+        </div>
+        <div class="form-group"><label>Reason for Visit</label><textarea rows="3" placeholder="Briefly describe the concern"></textarea></div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">Request Appointment</button>
+      </form>
+      <div class="form-success">
+        <div class="check">&#10003;</div>
+        <h3>Request Received</h3>
+        <p style="color:var(--muted);margin-top:8px;">Thank you — our chamber staff will contact you shortly to confirm your appointment.</p>
+      </div>
+    </div>
+  </div>
+</section>

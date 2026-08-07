@@ -1,12 +1,25 @@
 {
-  "name": "dr-shaiful-islam-site",
-  "version": "1.0.0",
-  "private": true,
+  "name": "drshaiful-site",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "tina-dev": "tinacms dev -c \"astro dev\"",
+    "tina-build": "tinacms build && astro build"
+  },
+  "dependencies": {
+    "astro": "^7.2.0",
+    "@astrojs/react": "^4.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tinacms": "^2.6.1",
+    "@tinacms/cli": "^1.7.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
   }
 }

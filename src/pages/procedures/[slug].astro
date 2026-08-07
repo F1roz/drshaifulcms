@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const procedures = await getCollection('procedures');
+  return procedures.map((proc) => ({
+    params: { slug: proc.id },
+    props: { proc },
+  }));
+}
+
+const { proc } = Astro.props;
+const { Content } = await render(proc);
+
+const allProcedures = await getCollection('procedures');
+const relatedSlugs: string[] = proc.data.related ?? [];
+const relatedProcs = relatedSlugs
+  .map((slug) => allProcedures.find((p) => p.id === slug))
+  .filter((p): p is typeof allProcedures[number] => Boolean(p));
+---
+<Layout title={proc.data.title} description={proc.data.description} ogImage={proc.data.image}>
+<section class="proc-hero">
+  <div class="container">
+    <div class="eyebrow">{proc.data.category}</div>
+    <h1 class="reveal in">{proc.data.title}</h1>
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/procedures">Expertise</a> &rsaquo; {proc.data.title}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container proc-body">
+    <div class="proc-content">
+      {proc.data.image && (
+        <img src={proc.data.image} alt={proc.data.title} style="border-radius:18px;margin-bottom:36px;width:100%;aspect-ratio:16/8;object-fit:cover;background:var(--bg-alt);" />
+      )}
+      <Content />
+    </div>
+    <aside class="proc-sidebar">
+      {relatedProcs.length > 0 && (
+        <div class="side-card">
+          <h4>Related Procedures</h4>
+          <div class="proc-related">
+            {relatedProcs.map((rp) => <a href={`/procedures/${rp.id}`}>{rp.data.title}</a>)}
+          </div>
+        </div>
+      )}
+      <div class="side-card">
+        <h4>Book a Consultation</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-bottom:16px;">Discuss {proc.data.title.toLowerCase()} with Dr. Shaiful Islam at one of his chambers in Dhaka or Khulna.</p>
+        <a href="/appointment" class="btn btn-navy" style="width:100%;justify-content:center;">Book Appointment</a>
+      </div>
+    </aside>
+  </div>
+</section>
+</Layout>
